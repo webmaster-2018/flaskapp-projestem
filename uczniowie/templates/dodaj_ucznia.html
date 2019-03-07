@@ -1,0 +1,27 @@
+{% extends "szablon.html" %}
+{% block tytul_strony %} Dodaj ucznia. {% endblock %}
+{% block h1 %}Dodaj ucznia{% endblock %}
+{% block lead %}Dodaj ucznia{% endblock %}
+{% block h2 %}Uczeń {% endblock %}
+{% block tresc%}
+
+<div class="container">
+    <form method="POST">
+    {{ form.csrf_token }}
+    {{ form.imie.label }}
+    {{ form.imie(class="form-control") }}
+    <br>
+    {{ form.nazwisko.label }}
+    {{ form.nazwisko(class="form-control") }}
+    <br>
+    {{ form.plec.label }}
+    {{ form.plec(class="form-control")}}
+    <br>
+    {{ form.klasa.label }}
+    {{ form.klasa(class="form-control") }}
+
+    <input type="submit" class="btn btn-info" value="Prześlij" style="float: right;">
+    </form>
+</div>
+
+{% endblock %}

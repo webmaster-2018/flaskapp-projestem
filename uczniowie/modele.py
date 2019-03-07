@@ -6,9 +6,8 @@
 from peewee import *
 
 baza_plik = 'quiz.db'
-baza = SqliteDatabase(baza_plik)  # instancja bazy
-
-### MODELE #
+baza = SqliteDatabase(baza_plik)
+#MODEL
 class BazaModel(Model):
     class Meta:
         database = baza
@@ -22,18 +21,15 @@ class Klasa(BazaModel):
 class Uczen(BazaModel):
     imie = CharField(null=False)
     nazwisko = CharField(null=False)
-    plec = BooleanField()
+    plec = IntegerField()
     klasa = ForeignKeyField(Klasa, related_name='uczniowie')
 
 
 def main(args):
-    # Uwaga: po utworzeniu modeli uruchom plik modele.py
-    # jeden raz w środowisku z zainstalowaną biblioteką peewee:
-    # python modele.py
     baza.connect()
     baza.create_tables([Klasa, Uczen])
 
 
 if __name__ == '__main__':
     import sys
-sys.exit(main(sys.argv))
+    sys.exit(main(sys.argv))
