@@ -16,8 +16,8 @@ class BazaModel(Model):
 
 class Klasa(BazaModel):
     nazwa = CharField(null=False)
-    roknaboru = IntegerField(default=0)
-    rokmatury = IntegerField(default=0)
+    rok_naboru = IntegerField(default=0)
+    rok_matury = IntegerField(default=0)
 
 class Uczen(BazaModel):
     imie = CharField(null=False)
