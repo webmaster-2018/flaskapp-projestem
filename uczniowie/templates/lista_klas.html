@@ -1,0 +1,18 @@
+{% extends "szablon.html" %}
+{% block tytul_strony %} Lista klas. {% endblock %}
+{% block tresc%}
+
+<ol>
+    {% for k in klasy %}
+        <li>
+            Nazwa klasy: {{ k.nazwa }}<br>
+            Rok naboru: {{ k.rok_naboru }} <br>
+            Rok matury: {{ k.rok_matury }}  <br>
+
+        
+
+        </li>
+    {% endfor %}
+</ol>
+
+{% endblock %}

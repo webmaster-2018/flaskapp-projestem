@@ -1,0 +1,27 @@
+{% extends "szablon.html" %}
+{% block tytul_strony %} Dodaj ucznia. {% endblock %}
+{% block h1 %}Dodaj ucznia{% endblock %}
+{% block lead %}Dodaj ucznia{% endblock %}
+{% block h2 %}Uczeń {% endblock %}
+{% block tresc%}
+
+<ol>
+  {% for u in uczniowie %}
+    <li>
+      Imię: {{u.imie}} 
+      <br>
+      Nazwisko : {{ u.nazwisko }} 
+      <br>
+      Płeć:
+      {% if u.plec == 1 %}
+        kobieta
+      {% else%} 
+        mężczyzna
+      {% endif %} 
+      <br>
+      Klasa: {{u.klasa.nazwa}}
+      <br>
+    </li>
+  {% endfor %}
+</ol>
+{% endblock %}
